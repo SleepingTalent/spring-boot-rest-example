@@ -19,6 +19,9 @@ public class MessageController {
     @Value("${message}")
     private String message;
 
+    @Value("${message-feature-two}")
+    private String messageFeatureTwo;
+
     @RequestMapping(value = "/message", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getMessage() {
 
@@ -28,5 +31,16 @@ public class MessageController {
         logger.info("getMessage() found: " + message);
 
         return message;
+    }
+
+    @RequestMapping(value = "/message-feature-two", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getMessageFeatureTwo() {
+
+        logger.info("getMessageFeatureTwo() invoked");
+
+
+        logger.info("getMessageFeatureTwo() found: " + messageFeatureTwo);
+
+        return messageFeatureTwo;
     }
 }
