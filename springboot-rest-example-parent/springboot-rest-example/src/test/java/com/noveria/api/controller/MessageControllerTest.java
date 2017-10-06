@@ -31,4 +31,12 @@ public class MessageControllerTest {
         assertEquals("message-one", actual);
     }
 
+    @Test
+    public void getMessageFeatureTwo() {
+
+        String actual = messageController.getMessageFeatureTwo();
+
+        assertEquals("message-two", actual);
+    }
+
 }
