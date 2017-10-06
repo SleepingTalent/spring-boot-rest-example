@@ -1,0 +1,16 @@
+info:
+  app:
+    name: rest-example
+    description: rest-example
+    version: 1.0.0
+
+server:
+  port: 8080
+  context-path: /rest-example
+
+spring:
+  application:
+    name: rest-example
+
+logging:
+  config: classpath:logback-test.xml
