@@ -10,7 +10,7 @@ node {
     stage('Build') {
 
         try {
-            sh "mvn -B -V -U -e -f " + pomLocation + "/pom.xml clean insall"
+            sh "mvn -B -V -U -e -f " + pomLocation + "/pom.xml clean install"
         } finally {
             junit targetLocation + '/surefire-reports/*.xml'
 
