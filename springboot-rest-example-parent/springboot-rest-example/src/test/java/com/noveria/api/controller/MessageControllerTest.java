@@ -13,7 +13,6 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MessageController.class)
-@EntityScan("com.noveria.api.model.domain")
 @ActiveProfiles("test")
 public class MessageControllerTest {
 
@@ -29,7 +28,7 @@ public class MessageControllerTest {
 
         String actual = messageController.getMessage();
 
-        assertEquals("Demo Message", actual);
+        assertEquals("message-one", actual);
     }
 
 }

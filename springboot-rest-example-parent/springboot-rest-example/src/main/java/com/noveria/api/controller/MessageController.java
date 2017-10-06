@@ -1,5 +1,6 @@
 package com.noveria.api.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,15 +16,17 @@ public class MessageController {
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
+    @Value("${message}")
+    private String message;
+
     @RequestMapping(value = "/message", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getMessage() {
 
         logger.info("getMessage() invoked");
 
-        String messages = "Demo Message";
 
-        logger.info("getMessage() found: " + messages);
+        logger.info("getMessage() found: " + message);
 
-        return messages;
+        return message;
     }
 }
